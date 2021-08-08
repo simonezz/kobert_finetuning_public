@@ -1,0 +1,16 @@
+program: fine_tuning.py
+method: bayes
+metric:
+  name: test/accuracy
+  goal: maximize
+
+parameters:
+  dropout:
+    values: [0.2, 0.3, 0.4, 0.5]
+  learning_rate:
+    values: [5e-6, 1e-5, 3e-5, 5e-5, 1e-4]
+  epochs:
+    values: [10, 15, 20]
+
+optimizer:
+  values: ["adam", "sgd"]
